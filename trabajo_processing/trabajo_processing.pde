@@ -30,5 +30,12 @@ void draw(){
  }
 image(pibehuyendo,mouseX,mouseY,50, 50);
 
+for(int suelo=10; suelo<=700; suelo+=20){
+  for(int blo=5;blo<width;blo+=5);
+ rect(width/400,height/1.5,suelo,suelo); 
+ fill(#343E3A);
+}
+
+
  
 }
