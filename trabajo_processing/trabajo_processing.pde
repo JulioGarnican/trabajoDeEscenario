@@ -6,6 +6,10 @@ PImage pibehuyendo;
 float posx;
 float speedX=7;
 int direction=1;
+PImage suelo;
+int spacio=400;
+int x=250;
+int y=250;
 
 
  void setup(){
@@ -15,7 +19,10 @@ int direction=1;
  bloque.resize(100,00);
  posx=0;
  pibehuyendo= loadImage("pibe.png");
+ pibehuyendo.resize(100,00);
+ suelo= loadImage( "grass.png");
  noStroke();
+ 
 }
 
 void draw(){
@@ -28,14 +35,24 @@ void draw(){
    direction*= -1;
  
  }
-image(pibehuyendo,mouseX,mouseY,50, 50);
-
-for(int suelo=10; suelo<=700; suelo+=20){
-  for(int blo=5;blo<width;blo+=5);
- rect(width/400,height/1.5,suelo,suelo); 
- fill(#343E3A);
-}
-
-
+ if (keyPressed &&(key== CODED)){
+   if (keyCode==LEFT){
+     x-=3;
+   }else if (keyCode== RIGHT){
+     y+=3;
+   }
+   if (keyCode ==UP){
+     y-=3;
+   } else if(keyCode==  DOWN){
+     y+=3;
+   }
+ }
+image(pibehuyendo, x,y,50, 50);
+ 
+for(int k=20;k<=40;k+=10){
+  image(suelo,space,spacio,width + spacio/2, height -spacio*2);
  
 }
+}
+
+ 
