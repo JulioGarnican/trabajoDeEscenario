@@ -5,11 +5,11 @@ PImage bloque;
 PImage pibehuyendo;
 float posx;
 float speedX=7;
-int direction=1;
+int direction=2;
 PImage suelo;
 int spacio=400;
-int x=250;
-int y=250;
+int x=200;
+int y=380;
 
 
  void setup(){
@@ -35,22 +35,24 @@ void draw(){
    direction*= -1;
  
  }
+ 
+image(pibehuyendo, x,y,50, 50);
  if (keyPressed &&(key== CODED)){
    if (keyCode==LEFT){
      x-=3;
    }else if (keyCode== RIGHT){
-     y+=3;
+     x+=3;
    }
    if (keyCode ==UP){
      y-=3;
    } else if(keyCode==  DOWN){
      y+=3;
    }
+   
+   image(pibehuyendo, x,y,50, 50);
  }
-image(pibehuyendo, x,y,50, 50);
- 
 for(int k=20;k<=40;k+=10){
-  image(suelo,space,spacio,width + spacio/2, height -spacio*2);
+  image(suelo,space,600,width + spacio/2, height -spacio*2);
  
 }
 }
